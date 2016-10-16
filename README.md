@@ -1,5 +1,4 @@
-**These notes are based on master, please see tags for README pertaining to specific releases.**
-Static-web-generator for mook courses from video libraries.
+Static-web-generator for mooc courses from video libraries.
 
 ## Usage
 ```bash
