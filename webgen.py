@@ -3,15 +3,15 @@ from os import walk
 from os.path import isfile, join
 list = os.listdir("..")
 list.remove("public server")
-#print (list)
-# for x in list :
-	# temp = os.listdir("../"+x)
-	# if isfile("../"+x):
+print (list)
+for x in list :
+	temp = os.listdir("../"+x)
+	if isfile("../"+x):
 		
-	# for y in temp:
-		# temp1 = os.listdir("../"+x+"/"+y)
-		# print(temp1)
-	# print(temp)
+	for y in temp:
+		temp1 = os.listdir("../"+x+"/"+y)
+		print(temp1)
+	print(temp)
 	
 def getextension(a):
 	strlist = a.split(".");
@@ -31,26 +31,26 @@ i=1
 for (dirpath , dirnames , filenames) in walk("posters") :
 	f=filenames
 	d=dirnames
-	#for x in f:
-		#strlist = getextension(x);
-		# if strlist[1] == "mp4":
-			# cdirpath = dirpath.replace(" Videos","")
-			# newpath = "posters/" +cdirpath[3:]
-			# if not os.path.exists(newpath):
-				# os.makedirs(newpath)
-			# newfpath = newpath +"/" + strlist[0] +".png"
-			# cmd = getcmd("00:00:08",dirpath+"/"+x,"1280x740",newfpath)
-			# os.system(cmd);
-			# print(cmd)
-		# if strlist[1] == "srt":
-			# cdirpath = dirpath.replace(" Subtitles","")
-			# newpath = "srt/" +cdirpath[3:]
-			# if not os.path.exists(newpath):
-				# os.makedirs(newpath)
-			# newfpath = newpath +"/" + strlist[0] +".vtt"
-			# cmd = getcmd1(dirpath+"/"+x,newfpath)
-			# os.system(cmd);
-			# #print(cmd)
+	for x in f:
+		strlist = getextension(x);
+		if strlist[1] == "mp4":
+			cdirpath = dirpath.replace(" Videos","")
+			newpath = "posters/" +cdirpath[3:]
+			if not os.path.exists(newpath):
+				os.makedirs(newpath)
+			newfpath = newpath +"/" + strlist[0] +".png"
+			cmd = getcmd("00:00:08",dirpath+"/"+x,"1280x740",newfpath)
+			os.system(cmd);
+			print(cmd)
+		if strlist[1] == "srt":
+			cdirpath = dirpath.replace(" Subtitles","")
+			newpath = "srt/" +cdirpath[3:]
+			if not os.path.exists(newpath):
+				os.makedirs(newpath)
+			newfpath = newpath +"/" + strlist[0] +".vtt"
+			cmd = getcmd1(dirpath+"/"+x,newfpath)
+			os.system(cmd);
+			print(cmd)
 	
 	dirbreak = dirpath.split("\\")
 	if len(dirbreak) == 1 :
